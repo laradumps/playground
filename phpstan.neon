@@ -1,0 +1,16 @@
+includes:
+        - ./vendor/nunomaduro/larastan/extension.neon
+        - ./phpstan-baseline.neon
+    
+    level: max
+
+    parameters:
+        paths:
+            - app
+
+    excludePaths:
+
+    ignoreErrors:
+        - '#PHPDoc tag @var#'
+
+    checkMissingIterableValueType: true
