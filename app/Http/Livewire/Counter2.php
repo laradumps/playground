@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire;
 
-use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\{Factory, View};
 use Livewire\Component;
 
 class Counter2 extends Component

@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
 
 class Queries extends Command
 {
@@ -34,4 +33,3 @@ class Queries extends Command
             ->first();
     }
 }
-

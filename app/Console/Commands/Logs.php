@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -19,6 +18,8 @@ class Logs extends Command
         $this->line('ds logs');
 
         config(['laradumps.send_log_applications' => true]);
+
+        logger()->info('Your message info', ['0' => 'Your Context']);
 
         Log::info('Your message info', ['0' => 'Your Context']);
 
