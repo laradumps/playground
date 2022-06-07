@@ -7,26 +7,15 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-class Validation extends Command
+class Contains extends Command
 {
-    protected $signature = 'dumps:validation';
+    protected $signature = 'dumps:contains';
 
-    protected $description = 'Dump Validation';
+    protected $description = 'Dump Contains';
 
     public function handle(): void
     {
         ds()->clear();
-
-        $this->line('ds Json');
-
-        $movies = Http::get('https://api.tvmaze.com/search/people?q=lauren');
-        ds($movies->body())
-            ->isJson()
-            ->label('Valid JSON');
-
-        $this->line('ds invalid json');
-        ds('{"}')->isJson()
-            ->label('Invalid JSON');
 
         $this->line('ds contains (false)');
         ds('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quidem?')

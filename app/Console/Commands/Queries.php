@@ -34,3 +34,4 @@ class Queries extends Command
             ->first();
     }
 }
+

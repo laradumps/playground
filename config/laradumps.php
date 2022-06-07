@@ -110,14 +110,14 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Livewire Except Components
+    | Ignore Livewire Components
     |--------------------------------------------------------------------------
     |
     | Dumps will ignore all components listed inside the array
     |
     */
 
-    'except_livewire_components' => [
+    'ignore_livewire_components' => [
         // \App\Http\Livewire\Counter::class,
     ],
 
@@ -156,8 +156,8 @@ return [
             'line_separator' => '&line=',
         ],
         'vscode' => [
-            'handler'        => 'vscode://file/',
-            'line_separator' => ':',
+            'handler'        => 'vscode://open?url=file://',
+            'line_separator' => '&line=',
         ],
     ],
 
@@ -169,7 +169,7 @@ return [
     |  You can specify a list of words that a route can count. Can specify part of a text
     |
     */
-    'except_route_contains' => [
+    'ignore_route_contains' => [
         'debugbar',
         'ignition',
         'horizon',
