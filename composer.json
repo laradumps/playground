@@ -1,7 +1,7 @@
 {
     "name": "laradumps/playground",
     "type": "project",
-    "description": "Laradumps Playground",
+    "description": "LaraDumps Playground",
     "keywords": ["laradumps", "dumps", "playground"],
     "license": "MIT",
     "require": {
@@ -17,11 +17,12 @@
         "barryvdh/laravel-debugbar": "^3.6",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.8",
-        "laradumps/laradumps": "dev-main",
+        "laradumps/laradumps": "^1.0",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "nunomaduro/larastan": "^2.0",
+        "nunomaduro/termwind": "^1.11",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
@@ -38,7 +39,13 @@
         }
     },
     "scripts": {
+        "cs-fixer": "./vendor/bin/php-cs-fixer fix --verbose --dry-run --using-cache=no --stop-on-violation",
         "fix": "./vendor/bin/php-cs-fixer fix",
+        "ds-check": "@php artisan ds:check",
+        "verify": [
+            "@ds-check",
+            "@cs-fixer"
+        ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"

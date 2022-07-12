@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class Queries extends Command
 {
-    protected $signature = 'dumps:query';
+    protected $signature = 'ds:query';
 
     protected $description = 'Dump Queries';
 

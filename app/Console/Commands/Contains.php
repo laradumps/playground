@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\{Http, Log};
 
 class Contains extends Command
 {
-    protected $signature = 'dumps:contains';
+    protected $signature = 'ds:contains';
 
     protected $description = 'Dump Contains';
 
@@ -16,18 +16,21 @@ class Contains extends Command
         ds()->clear();
 
         $this->line('ds contains (false)');
-        ds('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quidem?')
-            ->contains('muspi')
-            ->label('does\'n contains');
 
-        $this->line('ds contains');
-        ds('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quidem?')
-            ->contains('lorem')
-            ->label('contains');
+        $json = '{"name":"Paulo", "city":"Marianatown"}';
 
-        $this->line('ds contains');
-        ds('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quidem?')
-            ->contains('Lorem')
-            ->label('contains');
+        ds($json)->contains('Mariana'); //would produce ✅ Text contains
+
+        $json = '{"name":"Haleth", "nature":"Elf"}';
+
+        ds($json)->contains('elf'); //would produce ✅ Text contains
+
+        $json = '{"name":"Mariana", "country":"Brazil"}';
+
+        //Will not match "Brazil"
+        ds($json)->contains('brazil', caseSensitive: true);
+
+        //No match for "Maria" in "Mariana"
+        ds($json)->contains('Maria', wholeWord: true);
     }
 }

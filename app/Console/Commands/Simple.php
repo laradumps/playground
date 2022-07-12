@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Simple extends Command
 {
-    protected $signature = 'dumps:simple';
+    protected $signature = 'ds:simple';
 
     protected $description = 'Simple';
 
@@ -16,8 +16,8 @@ class Simple extends Command
 
         $this->line('ds simple');
 
-        $var1 = 'Hello World';
+        $var = 'Hello World';
 
-        ds($var1);
+        ds($var);
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Colors extends Command
 {
-    protected $signature = 'dumps:colors {--screen}';
+    protected $signature = 'ds:colors {--screen}';
 
     protected $description = 'Dump Colors';
 

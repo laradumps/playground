@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Screens extends Command
 {
-    protected $signature = 'dumps:screens';
+    protected $signature = 'ds:screens';
 
     protected $description = 'Dump Screens';
 

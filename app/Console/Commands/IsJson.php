@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\{Http, Log};
 
 class IsJson extends Command
 {
-    protected $signature = 'dumps:json';
+    protected $signature = 'ds:json';
 
     protected $description = 'Dump IsJson';
 
@@ -18,11 +18,13 @@ class IsJson extends Command
         $this->line('ds Json');
 
         $movies = Http::get('https://api.tvmaze.com/search/people?q=lauren');
+
         ds($movies->body())
             ->isJson()
             ->label('Valid JSON');
 
         $this->line('ds invalid json');
+
         ds('{"}')->isJson()
             ->label('Invalid JSON');
     }

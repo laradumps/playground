@@ -8,10 +8,29 @@ class Counter extends Component
 {
     public int $count = 0;
 
-    public function increment()
+    protected function getRules(): array
     {
+        return [
+            'count' => 'numeric|min:30',
+        ];
+    }
+
+    public function save()
+    {
+        $this->validate();
+
         $this->count++;
         $this->emitTo(Counter2::class, 'count', $this->count);
+    }
+
+    public function event()
+    {
+        $this->emit('test:event', ['name' => 'Luan']);
+    }
+
+    public function browserEvent()
+    {
+        $this->dispatchBrowserEvent('dispatchBrowserEvent', ['test' => true]);
     }
 
     public function render()

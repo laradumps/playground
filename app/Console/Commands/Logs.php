@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Log;
 
 class Logs extends Command
 {
-    protected $signature = 'dumps:log';
+    protected $signature = 'ds:log';
 
     protected $description = 'Dump Log';
 

@@ -16,6 +16,7 @@
             }
         </style>
         @livewireStyles
+        <script defer src="{{ mix('js/app.js') }}"></script>
     </head>
     <body class="antialiased">
         <div class="m-3 p-4 rounded bg-slate-100">
@@ -24,4 +25,6 @@
         </div>
     </body>
     @livewireScripts
+
+    @dsAutoClearOnPageReload
 </html>

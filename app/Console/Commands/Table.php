@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class Table extends Command
 {
-    protected $signature = 'dumps:table';
+    protected $signature = 'ds:table';
 
     protected $description = 'Dump Table';
 

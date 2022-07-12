@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Label extends Command
 {
-    protected $signature = 'dumps:label';
+    protected $signature = 'ds:label';
 
     protected $description = 'Label Screens';
 

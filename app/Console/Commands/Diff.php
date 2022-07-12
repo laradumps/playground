@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Diff extends Command
 {
-    protected $signature = 'dumps:diff';
+    protected $signature = 'ds:diff';
 
     protected $description = 'Dump Diff';
 
@@ -16,7 +16,7 @@ class Diff extends Command
 
         $this->line('ds diff');
 
-        ds()->diff('This is an example text', 'This is an example of content');
+        ds('This is an example text')->diff('This is an example text 2', true);
 
         $array1 = [
             'name'      => 'Luan',
@@ -30,6 +30,6 @@ class Diff extends Command
             'is_active' => true,
         ];
 
-        ds()->diff($array1, $array2, true);
+        ds($array1)->diff($array2, false);
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Routes extends Command
 {
-    protected $signature = 'dumps:route';
+    protected $signature = 'ds:route';
 
     protected $description = 'Dump Routes';
 

@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class PHPInfo extends Command
 {
-    protected $signature = 'dumps:phpinfo';
+    protected $signature = 'ds:phpinfo';
 
     protected $description = 'Dump PHPInfo';
 

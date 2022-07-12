@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 
 class Multiple extends Command
 {
-    protected $signature = 'dumps:multiple';
+    protected $signature = 'ds:multiple';
 
     protected $description = 'Dump Multiple';
 

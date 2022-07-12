@@ -7,7 +7,7 @@ use Illuminate\Console\Command;
 
 class Model extends Command
 {
-    protected $signature = 'dumps:model';
+    protected $signature = 'ds:model';
 
     protected $description = 'Model';
 

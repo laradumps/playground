@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 
 class All extends Command
 {
-    protected $signature = 'dumps:all';
+    protected $signature = 'ds:all';
 
     protected $description = 'All Dumps';
 
@@ -33,10 +33,16 @@ class All extends Command
 
     private function artisanCommands(): void
     {
+        $commandsToIgnore = [
+            'ds:all',
+            'ds:init',
+            'ds:check',
+        ];
+
         $this->commands = collect(Artisan::all())
             ->keys()
-            ->filter(function ($command) {
-                return str($command)->startsWith('dumps:') && $command != $this->signature;
+            ->filter(function ($command) use ($commandsToIgnore) {
+                return str($command)->startsWith('ds:') && !in_array($command, $commandsToIgnore);
             });
     }
 }
