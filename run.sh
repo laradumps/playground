@@ -1,7 +1,7 @@
 #!/bin/bash
-                  #╔═════════════════════╗#
-                  #║   LaraDumps Doc     ║#
-                  #╚═════════════════════╝#
+                  #╔═══════════════════════╗#
+                  #║  LaraDumps Playground ║#
+                  #╚═══════════════════════╝#
 
 # ══════════════ STYLES ═════════
 
@@ -99,4 +99,6 @@ echo -e "This project is using default app host configuration: ${YELLOW}${DS_APP
 
 echo -e "1. Open the LaraDumps desktop application.\n"
 echo -e "2. To send some dumps, run:\n    ${YELLOW}php artisan ds:all${NC}\n"
-echo -e "3. When finished, run the command below to try the Livewire example:\n    ${YELLOW}php artisan serve${NC}"
+echo -e "3. When finished, run the command below to try the Livewire example:\n    ${YELLOW}php artisan serve${NC}\n"
+echo -e "4. Check where every ${YELLOW}ds()${NC} call is and make sure no dump is left in production. Run:\n    ${YELLOW}php artisan ds:check${NC}\n"
+
