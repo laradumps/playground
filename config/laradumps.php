@@ -188,6 +188,7 @@ return [
         'ignition',
         'horizon',
         'livewire',
+        '__ds',
     ],
 
     /*
@@ -224,7 +225,7 @@ return [
 
     'ci_check' => [
         'directories' => [
-            base_path('config'),
+            base_path('app'),
         ],
         'ignore_line_when_contains_text' => [
         ],
