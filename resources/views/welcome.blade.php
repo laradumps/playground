@@ -25,6 +25,7 @@
         </div>
     </body>
     @livewireScripts
-
-    @dsAutoClearOnPageReload
+    @if(app()->environment('local'))
+        @dsAutoClearOnPageReload
+    @endif
 </html>
